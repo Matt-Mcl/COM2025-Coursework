@@ -30,4 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app_title: Car Park Space Bookings
+  app_description: Book car park spaces picking from locations and being provided costs
+
