@@ -1,0 +1,25 @@
+<p>
+  <%= "Dear #{t('app_title')}," %><br>
+  <%= "Could you get in touch with me please?" %>
+</p>
+
+<dl>
+  <dt>Name:</dt>
+  <dd>
+    <%= @name %>
+  </dd>
+  <dt>Email:</dt>
+  <dd>
+    <%= @email %>
+  </dd>
+  <dt>Phone Number:</dt>
+  <dd>
+    <%= @phone %>
+  </dd>
+</dl>
+
+<p>
+  <%= @query %><br><br>
+  Thanks,
+  <%= @name %>
+</p>
