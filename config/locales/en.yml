@@ -30,6 +30,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  app_title: Car Park Space Bookings
-  app_description: Book car park spaces picking from locations and being provided costs
+  app_title: "Car Park Space Bookings"
+  app_description: "Book car park spaces picking from locations and being provided costs"
 
+  home:
+    home:
+      title: "Home"
+      description: "Description"
+
+    contact:
+      title: "Contact"
+      description: "Description"
+
+      #Form:
+      name: "Name: "
+      enter_name: "Your name"
+      email: "Email: "
+      enter_email: "Your email address"
+      phone_number: "Phone Number: "
+      enter_phone_number: "Your phone number"
+      query: "Query: "
+      enter_query: "Your query"
+      submit: "Contact Us"
+
+    request_contact:
+      no_email: "You must provide an email address"
+      email_sent: "Form submitted. We will reply soon."
