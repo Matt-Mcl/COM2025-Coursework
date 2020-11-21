@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+carpark = Carpark.where(name: 'Guildford Park Carpark').first
+carpark&.delete(carpark)
+Carpark.create([name: 'Guildford Park Carpark', address: '122 Guildford Park Ave, Guildford, GU2 7NN'])
+
+carpark = Carpark.where(name: 'Bedford Road Car Park').first
+carpark&.delete(carpark)
+Carpark.create([name: 'Bedford Road Car Park', address: '45 Bedford Road, Guildford, GU1 4SJ'])
+
+carpark = Carpark.where(name: 'University of Surrey Public Car Park').first
+carpark&.delete(carpark)
+Carpark.create([name: 'University of Surrey Public Car Park', address: 'Perimeter Road, Guildford GU2 7JL'])
+
