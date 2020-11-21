@@ -1,4 +1,5 @@
 class ContactUsMailer < ApplicationMailer
+
   def contact_email(email, name, phone, query)
     @email = email
     @name = name
@@ -6,4 +7,5 @@ class ContactUsMailer < ApplicationMailer
     @query = query
     mail cc: @email
   end
+
 end
