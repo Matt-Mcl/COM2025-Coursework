@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+<% flash.each do |key, value| %>
+  <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
+<% end %>
 
-    <% flash.each do |key, value| %>
-    <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
-    <% end %>
+<%= yield %>
 
-    <%= yield %>
-
-  </body>
+</body>
 </html>
