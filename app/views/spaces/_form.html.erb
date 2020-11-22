@@ -1,0 +1,33 @@
+<%= form_with(model: space, local: true) do |form| %>
+  <% if space.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(space.errors.count, "error") %> prohibited this space from being saved:</h2>
+
+      <ul>
+      <% space.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :carpark_id %>
+    <p><%= @space.carpark.name  %></p>
+    <%= form.hidden_field :carpark_id, value: @space.carpark.id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :space_number %>
+    <%= form.number_field :space_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hourly_cost %>
+    <%= form.text_field :hourly_cost %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

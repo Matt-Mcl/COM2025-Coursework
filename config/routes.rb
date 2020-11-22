@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :spaces
   resources :carparks
   root 'home#home'
   get 'contact', to: 'home#contact'

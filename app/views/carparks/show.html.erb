@@ -10,5 +10,6 @@
   <%= @carpark.address %>
 </p>
 
+<%= link_to 'Add Space', new_space_path(carpark_id: @carpark) %>
 <%= link_to 'Edit', edit_carpark_path(@carpark) %> |
 <%= link_to 'Back', carparks_path %>

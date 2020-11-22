@@ -10,14 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_100604) do
+ActiveRecord::Schema.define(version: 2020_11_21_120140) do
 
-  create_table "carparks", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "address", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_carparks_on_name", unique: true
+  create_table 'carparks', force: :cascade do |t|
+    t.string 'name', null: false
+    t.text 'address', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['name'], name: 'index_carparks_on_name', unique: true
+  end
+
+  create_table 'spaces', force: :cascade do |t|
+    t.integer 'carpark_id', null: false
+    t.integer 'space_number', null: false
+    t.decimal 'hourly_cost', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['carpark_id'], name: 'index_spaces_on_carpark_id'
   end
 
 end

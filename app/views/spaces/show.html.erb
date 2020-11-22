@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Carpark:</strong>
+  <%= @space.carpark.name %>
+</p>
+
+<p>
+  <strong>Space number:</strong>
+  <%= @space.space_number %>
+</p>
+
+<p>
+  <strong>Hourly cost:</strong>
+  <%= @space.hourly_cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_space_path(@space) %> |
+<%= link_to 'Back', spaces_path %>
