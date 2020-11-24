@@ -3,7 +3,7 @@
 one:
   carpark: one
   space_number: 1
-  hourly_cost: 9.99
+  hourly_cost: 5.99
 
 two:
   carpark: two

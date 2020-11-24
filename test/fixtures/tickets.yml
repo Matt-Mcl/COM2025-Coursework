@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  space: one
+  registration_number: MyString
+  paid_from: 2020-11-24 11:00:00
+  paid_to: 2020-11-24 12:00:00
+  total_cost: 5.99
+
+two:
+  space: two
+  registration_number: MyString
+  paid_from: 2020-11-24 11:00:00
+  paid_to: 2020-11-24 12:00:00
+  total_cost: 5.99

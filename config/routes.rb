@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tickets
   resources :spaces
   resources :carparks
   root 'home#home'
