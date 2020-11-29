@@ -12,8 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :space_id %>
-    <%= form.text_field :space_id %>
+    <%# form.label :space_id %>
+    <p>Carpark</p>
+    <%= form.collection_select :space_id, Carpark.order(:name), :id, :name, include_blank: false %>
   </div>
 
   <div class="field">
@@ -31,10 +32,12 @@
     <%= form.datetime_select :paid_to %>
   </div>
 
-  <div class="field">
-    <%= form.label :total_cost %>
-    <%= form.text_field :total_cost %>
-  </div>
+  <%#
+  <%#<div class="field">
+  <%#  <%= form.label :total_cost %>
+  <%#  <%= form.text_field :total_cost %>
+  <%#</div>
+  %>
 
   <div class="actions">
     <%= form.submit %>
