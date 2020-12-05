@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Space Number</th>
+      <th>Carpark</th>
       <th>Registration number</th>
       <th>Paid from</th>
       <th>Paid to</th>
@@ -17,7 +18,8 @@
   <tbody>
     <% @tickets.each do |ticket| %>
       <tr>
-        <td><%= ticket.space_id %></td>
+        <td><%= ticket.space.space_number %></td>
+        <td><%= ticket.space.carpark.name %></td>
         <td><%= ticket.registration_number %></td>
         <td><%= ticket.paid_from %></td>
         <td><%= ticket.paid_to %></td>

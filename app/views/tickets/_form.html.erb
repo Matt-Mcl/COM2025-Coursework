@@ -24,12 +24,12 @@
 
   <div class="field">
     <%= form.label :paid_from %>
-    <%= form.datetime_select :paid_from %>
+    <%= form.datetime_select :paid_from, { ampm: true, order: [:day, :month, :year], discard_minute: true, select_minute: 0 } %>
   </div>
 
   <div class="field">
     <%= form.label :paid_to %>
-    <%= form.datetime_select :paid_to %>
+    <%= form.datetime_select :paid_to, { ampm: true, order: [:day, :month, :year], discard_minute: true, select_minute: 0 } %>
   </div>
 
   <%#

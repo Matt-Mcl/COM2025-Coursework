@@ -1,9 +1,15 @@
 class Ticket < ApplicationRecord
-  before_save :find_space_id
+  before_save :format_times
+  before_save :find_space
   before_save :calculate_total_cost
 
   belongs_to :space, optional: true
   validates :registration_number, :paid_from, :paid_to, presence: true
+
+  def format_times
+    self.paid_from = paid_from.change(min: 0)
+    self.paid_to = paid_to.change(min: 0)
+  end
 
   <<-TESTS
     puts '&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'
@@ -26,11 +32,24 @@ class Ticket < ApplicationRecord
     puts space_id
     puts '&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'
   TESTS
-  def find_space_id
+  def find_space
     @ticket_carpark = Carpark.find(space_id)
     @spaces = @ticket_carpark.spaces
-    @new_space_id = @spaces.where(space_number: 1)
-    self.space_id = @new_space_id.ids.to_s.gsub(/\D/, '').to_i
+    @overlap = false
+    @spaces.each do |space|
+      @space_tickets = Ticket.where(space_id: space.id).all
+      @space_tickets.each do |ticket|
+        if (Time.parse(ticket.paid_from.strftime('%FT%R'))..Time.parse(ticket.paid_to.strftime('%FT%R')) - 1.minute).overlaps?(Time.parse(paid_from.strftime('%FT%R'))..Time.parse(paid_to.strftime('%FT%R')) - 1.minute)
+          @overlap = true
+        end
+      end
+      unless @overlap
+        @new_space_id = space.id
+        break
+      end
+      @overlap = false
+    end
+    self.space_id = @new_space_id
   end
 
   <<-TESTS
@@ -48,8 +67,4 @@ class Ticket < ApplicationRecord
     @ticket_space = Space.find(space_id)
     self.total_cost = ((end_time - start_time) / 3600.0) * @ticket_space.hourly_cost
   end
-
-
-
-
 end
