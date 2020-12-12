@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  carpark: one
+space_one:
+  carpark: carpark_one
   space_number: 1
-  hourly_cost: 5.99
+  hourly_cost: 2.99
 
-two:
-  carpark: two
-  space_number: 2
-  hourly_cost: 9.99
+space_two:
+  carpark: carpark_two
+  space_number: 1
+  hourly_cost: 4.99

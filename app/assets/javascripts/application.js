@@ -10,9 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// = require jquery.validate
 // = require jquery3
 // = require jquery_ujs
 // = require bootstrap-sprockets
 // = require activestorage
 // = require turbolinks
 // = require_tree .
+
+
+// Jquery validation for contact form, checks all fields have been entered.
+$(document).ready(function () {
+    if(document.getElementById('contact_form')){
+        $('#contact_form').validate();
+    }
+});

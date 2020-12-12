@@ -13,8 +13,7 @@
 
   <div class="field">
     <%= form.label :carpark_id %>
-    <p><%= @space.carpark.name  %></p>
-    <%= form.hidden_field :carpark_id, value: @space.carpark.id %>
+    <%= form.collection_select :carpark_id, Carpark.order(:name), :id, :name, include_blank: false %>
   </div>
 
   <div class="field">

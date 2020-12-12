@@ -12,32 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%# form.label :space_id %>
-    <p>Carpark</p>
+    <%= form.label t('.carpark') %>
     <%= form.collection_select :space_id, Carpark.order(:name), :id, :name, include_blank: false %>
   </div>
 
   <div class="field">
-    <%= form.label :registration_number %>
+    <%= form.label t('.registration_number') %>
     <%= form.text_field :registration_number %>
   </div>
 
   <div class="field">
-    <%= form.label :paid_from %>
-    <%= form.datetime_select :paid_from, { ampm: true, order: [:day, :month, :year], discard_minute: true, select_minute: 0 } %>
+    <%= form.label t('.paid_from') %>
+    <%= form.datetime_select :paid_from, { ampm: true, order: [:day, :month, :year], minute_step: 15 } %>
   </div>
 
   <div class="field">
-    <%= form.label :paid_to %>
-    <%= form.datetime_select :paid_to, { ampm: true, order: [:day, :month, :year], discard_minute: true, select_minute: 0 } %>
+    <%= form.label t('.paid_to') %>
+    <%= form.datetime_select :paid_to, { ampm: true, order: [:day, :month, :year], minute_step: 15 } %>
   </div>
-
-  <%#
-  <%#<div class="field">
-  <%#  <%= form.label :total_cost %>
-  <%#  <%= form.text_field :total_cost %>
-  <%#</div>
-  %>
 
   <div class="actions">
     <%= form.submit %>

@@ -1,6 +1,6 @@
 class SpacesController < ApplicationController
   before_action :set_space, only: [:show, :edit, :update, :destroy]
-  before_action :set_carpark, only: [:new, :create]
+  before_action :redirect_to_root
 
   # GET /spaces
   # GET /spaces.json
@@ -15,7 +15,7 @@ class SpacesController < ApplicationController
 
   # GET /spaces/new
   def new
-    @space = @carpark.spaces.new
+    @space = Space.new
   end
 
   # GET /spaces/1/edit
@@ -25,7 +25,7 @@ class SpacesController < ApplicationController
   # POST /spaces
   # POST /spaces.json
   def create
-    @space = @carpark.spaces.new(space_params)
+    @space = Space.new(space_params)
 
     respond_to do |format|
       if @space.save
@@ -63,18 +63,17 @@ class SpacesController < ApplicationController
   end
 
   private
-    def set_carpark
-      @carpark = Carpark.find_by(id: params[:carpark_id]) ||
-          Carpark.find(space_params[:carpark_id])
-    end
+  def redirect_to_root
+    redirect_to root_path
+  end
 
-      # Use callbacks to share common setup or constraints between actions.
-    def set_space
-      @space = Space.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_space
+    @space = Space.find(params[:id])
+  end
 
-      # Only allow a list of trusted parameters through.
-    def space_params
-      params.require(:space).permit(:carpark_id, :space_number, :hourly_cost)
-    end
+  # Only allow a list of trusted parameters through.
+  def space_params
+    params.require(:space).permit(:carpark_id, :space_number, :hourly_cost)
+  end
 end

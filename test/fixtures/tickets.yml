@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  space: one
+ticket_one:
+  space: space_one
   registration_number: MyString
-  paid_from: 2020-11-24 11:00:00
-  paid_to: 2020-11-24 12:00:00
-  total_cost: 5.99
+  paid_from: 7020-11-24 11:00:00
+  paid_to: 7020-11-24 12:00:00
+  total_cost: 2.99
 
-two:
-  space: two
+ticket_two:
+  space: space_two
   registration_number: MyString
-  paid_from: 2020-11-24 11:00:00
-  paid_to: 2020-11-24 12:00:00
-  total_cost: 5.99
+  paid_from: 7020-11-24 11:00:00
+  paid_to: 7020-11-24 12:00:00
+  total_cost: 2.99

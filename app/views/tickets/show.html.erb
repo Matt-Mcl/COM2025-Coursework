@@ -1,34 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Space:</strong>
+  <strong><%=t('tickets.index.space_number')%>:</strong>
   <%= @ticket.space.space_number %>
 </p>
 
 <p>
-  <strong>Carpark:</strong>
+  <strong><%=t('tickets.form.carpark')%>:</strong>
   <%= @ticket.space.carpark.name %>
 </p>
 
 <p>
-  <strong>Registration number:</strong>
+  <strong><%=t('tickets.form.registration_number')%>:</strong>
   <%= @ticket.registration_number %>
 </p>
 
 <p>
-  <strong>Paid from:</strong>
+  <strong><%=t('tickets.form.paid_from')%>:</strong>
   <%= @ticket.paid_from %>
 </p>
 
 <p>
-  <strong>Paid to:</strong>
+  <strong><%=t('tickets.form.paid_to')%>:</strong>
   <%= @ticket.paid_to %>
 </p>
 
 <p>
-  <strong>Total cost:</strong>
+  <strong><%=t('tickets.index.total_cost')%>:</strong>
   <%= @ticket.total_cost %>
 </p>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+<%= link_to t('.edit'), edit_ticket_path(@ticket) %> |
+<%= link_to t('tickets.new.back'), tickets_path %>

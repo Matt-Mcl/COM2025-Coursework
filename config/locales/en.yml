@@ -36,11 +36,11 @@ en:
   home:
     home:
       title: "Home"
-      description: "Description"
+      description: "Welcome to the carpark booking system. Please click book within the navigation bar to book a space."
 
     contact:
       title: "Contact"
-      description: "Description"
+      description: "Please fill out the form below to get in contact."
 
       #Form:
       name: "Name: "
@@ -56,3 +56,47 @@ en:
     request_contact:
       no_email: "You must provide an email address"
       email_sent: "Form submitted. We will reply soon."
+
+  tickets:
+    form:
+      carpark: "Carpark"
+      registration_number: "Registration Number"
+      paid_from: "Starting at"
+      paid_to: "Ending at"
+    new:
+      new_ticket: "New Ticket"
+      back: "Back"
+    create:
+      ticket_created: "Ticket successfully created."
+    update:
+      ticket_updated: "Ticket successfully updated."
+    destroy:
+      ticket_destroyed: "Ticket successfully destroyed."
+    index:
+      confirmation: "Are you sure?"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      tickets: "Tickets"
+      space_number: "Space Number"
+      total_cost: "Total Cost"
+    show:
+      edit: "Edit"
+    edit:
+      editing_ticket: "Editing Ticket"
+
+  shared:
+    footer:
+      carpark_booking_system: "Carpark Booking System"
+    header:
+      home: "Home"
+      contact: "Contact"
+      book: "Book"
+
+  error:
+    ending_before_start: "(ending at date) must be after the start date"
+    time_greater_than_zero: "Parking time must be greater than zero"
+    starting_time_in_past: "(starting at date) can't be in the past"
+
+
+

@@ -1,5 +1,6 @@
 class CarparksController < ApplicationController
   before_action :set_carpark, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_root
 
   # GET /carparks
   # GET /carparks.json
@@ -62,13 +63,17 @@ class CarparksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_carpark
-      @carpark = Carpark.find(params[:id])
-    end
+  def redirect_to_root
+    redirect_to root_path
+  end
 
-    # Only allow a list of trusted parameters through.
-    def carpark_params
-      params.require(:carpark).permit(:name, :address)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_carpark
+    @carpark = Carpark.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def carpark_params
+    params.require(:carpark).permit(:name, :address)
+  end
 end

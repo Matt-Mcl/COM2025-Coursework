@@ -3,7 +3,7 @@ require 'test_helper'
 class SpaceTest < ActiveSupport::TestCase
 
   setup do
-    @carpark = carparks(:one)
+    @carpark = carparks(:carpark_one)
   end
 
   test 'should not save empty space' do

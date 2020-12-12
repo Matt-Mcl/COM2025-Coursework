@@ -28,7 +28,7 @@ class TicketsController < ApplicationController
 
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to @ticket, notice: 'Ticket was successfully created.' }
+        format.html { redirect_to @ticket, notice: t('.ticket_created') }
         format.json { render :show, status: :created, location: @ticket }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TicketsController < ApplicationController
   def update
     respond_to do |format|
       if @ticket.update(ticket_params)
-        format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
+        format.html { redirect_to @ticket, notice: t('.ticket_updated') }
         format.json { render :show, status: :ok, location: @ticket }
       else
         format.html { render :edit }
@@ -56,19 +56,19 @@ class TicketsController < ApplicationController
   def destroy
     @ticket.destroy
     respond_to do |format|
-      format.html { redirect_to tickets_url, notice: 'Ticket was successfully destroyed.' }
+      format.html { redirect_to tickets_url, notice: t('.ticket_destroyed') }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_ticket
-      @ticket = Ticket.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_ticket
+    @ticket = Ticket.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def ticket_params
-      params.require(:ticket).permit(:space_id, :registration_number, :paid_from, :paid_to, :total_cost)
-    end
+  # Only allow a list of trusted parameters through.
+  def ticket_params
+    params.require(:ticket).permit(:space_id, :registration_number, :paid_from, :paid_to, :total_cost)
+  end
 end

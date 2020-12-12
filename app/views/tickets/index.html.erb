@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tickets</h1>
+<h1><%=t('.tickets')%></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Space Number</th>
-      <th>Carpark</th>
-      <th>Registration number</th>
-      <th>Paid from</th>
-      <th>Paid to</th>
-      <th>Total cost</th>
+      <th><%=t('.space_number')%></th>
+      <th><%=t('tickets.form.carpark')%></th>
+      <th><%=t('tickets.form.registration_number')%></th>
+      <th><%=t('tickets.form.paid_from')%></th>
+      <th><%=t('tickets.form.paid_to')%></th>
+      <th><%=t('.total_cost')%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,9 +24,9 @@
         <td><%= ticket.paid_from %></td>
         <td><%= ticket.paid_to %></td>
         <td><%= ticket.total_cost %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('.show'), ticket %></td>
+        <td><%= link_to t('.edit'), edit_ticket_path(ticket) %></td>
+        <td><%= link_to t('.destroy'), ticket, method: :delete, data: { confirm: t('.confirmation') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Ticket', new_ticket_path %>
+<%= link_to t('tickets.new.new_ticket'), new_ticket_path %>

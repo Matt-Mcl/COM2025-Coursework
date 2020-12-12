@@ -1,6 +1,6 @@
-<h1>Editing Ticket</h1>
+<h1><%= t('.editing_ticket')%></h1>
 
 <%= render 'form', ticket: @ticket %>
 
-<%= link_to 'Show', @ticket %> |
-<%= link_to 'Back', tickets_path %>
+<%= link_to t('tickets.index.show'), @ticket %> |
+<%= link_to t('tickets.new.back'), tickets_path %>

@@ -13,7 +13,11 @@
   <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
 <% end %>
 
+<%= render 'shared/header' %>
+
 <%= yield %>
+
+<%= render 'shared/footer' %>
 
 </body>
 </html>
