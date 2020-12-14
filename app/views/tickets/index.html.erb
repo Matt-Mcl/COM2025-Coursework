@@ -21,9 +21,9 @@
         <td><%= ticket.space.space_number %></td>
         <td><%= ticket.space.carpark.name %></td>
         <td><%= ticket.registration_number %></td>
-        <td><%= ticket.paid_from %></td>
-        <td><%= ticket.paid_to %></td>
-        <td><%= ticket.total_cost %></td>
+        <td><%= ticket.paid_from.strftime("%d/%m/%Y  %H:%M") %></td>
+        <td><%= ticket.paid_to.strftime("%d/%m/%Y  %H:%M") %></td>
+        <td><%= number_to_currency(ticket.total_cost, unit: '£') %></td>
         <td><%= link_to t('.show'), ticket %></td>
         <td><%= link_to t('.edit'), edit_ticket_path(ticket) %></td>
         <td><%= link_to t('.destroy'), ticket, method: :delete, data: { confirm: t('.confirmation') } %></td>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to t('tickets.new.new_ticket'), new_ticket_path %>
+<%= link_to t('tickets.new.new_ticket'), new_ticket_path, class: 'button_class' %>

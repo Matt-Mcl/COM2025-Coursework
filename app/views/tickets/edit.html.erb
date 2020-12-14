@@ -2,5 +2,5 @@
 
 <%= render 'form', ticket: @ticket %>
 
-<%= link_to t('tickets.index.show'), @ticket %> |
-<%= link_to t('tickets.new.back'), tickets_path %>
+<%= link_to t('tickets.index.show'), @ticket, class: 'button_class' %>
+<%= link_to t('tickets.new.back'), tickets_path, class: 'button_class' %>

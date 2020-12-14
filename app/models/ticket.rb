@@ -44,7 +44,7 @@ class Ticket < ApplicationRecord
     return if paid_to.nil? || paid_from.nil?
 
     # If ending date is before start date
-    errors.add(:paid_to, I18n.t('error.ending_before_start')) if paid_to <= paid_from
+    errors.add(:paid_to, I18n.t('error.ending_before_start')) if paid_to < paid_from
     # If parking time isn't greater than zero
     errors.add(:base, I18n.t('error.time_greater_than_zero')) if (paid_from - paid_to).zero?
     # If starting date is in the past - don't need to check ending time as this would mean

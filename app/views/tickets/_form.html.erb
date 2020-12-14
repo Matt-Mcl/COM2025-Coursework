@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label t('.carpark') %>
-    <%= form.collection_select :space_id, Carpark.order(:name), :id, :name, include_blank: false %>
+    <%= form.label t('.carpark'), class: 'form_label_class' %>
+    <%= form.collection_select :space_id, Carpark.order(:name), :id, :name, {}, include_blank: false, class: 'range_class' %>
   </div>
 
   <div class="field">
-    <%= form.label t('.registration_number') %>
-    <%= form.text_field :registration_number %>
+    <%= form.label t('.registration_number'), class: 'form_label_class' %>
+    <%= form.text_field :registration_number, class: 'text_class' %>
   </div>
 
   <div class="field">
-    <%= form.label t('.paid_from') %>
-    <%= form.datetime_select :paid_from, { ampm: true, order: [:day, :month, :year], minute_step: 15 } %>
+    <%= form.label t('.paid_from'), class: 'form_label_class' %>
+    <%= form.datetime_select :paid_from, { ampm: true, order: [:day, :month, :year], minute_step: 15 }, class: 'date_class' %>
   </div>
 
   <div class="field">
-    <%= form.label t('.paid_to') %>
-    <%= form.datetime_select :paid_to, { ampm: true, order: [:day, :month, :year], minute_step: 15 } %>
+    <%= form.label t('.paid_to'), class: 'form_label_class' %>
+    <%= form.datetime_select :paid_to, { ampm: true, order: [:day, :month, :year], minute_step: 15 }, class: 'date_class' %>
   </div>
 
   <div class="actions">
